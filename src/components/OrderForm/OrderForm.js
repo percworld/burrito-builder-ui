@@ -53,7 +53,7 @@ class OrderForm extends Component {
         />
 
         { ingredientButtons}
-        {this.state.error && <p>{this.state.error}</p>}
+        {this.state.error && <p data-cy="error">{this.state.error}</p>}
         <p>Order: {this.state.ingredients.join(', ') || 'Nothing selected'}</p>
 
         <button data-cy="submit" onClick={e => this.handleSubmit(e)}>

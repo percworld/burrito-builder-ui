@@ -13,3 +13,15 @@ export const postOrder = (order) => {
   })
     .then(response => response.json())
 }
+
+export const deleteOrder = (orderID) => {
+  return fetch(`http://localhost:3001/api/v1/orders${orderID}`, {
+    method: 'DELETE',
+    body: JSON.stringify(orderID),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => response.json())
+}
+
