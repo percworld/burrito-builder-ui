@@ -10,6 +10,14 @@ class OrderForm extends Component {
     };
   }
 
+  handleNameChange = event => {
+    this.setState({ name: event.target.value })
+  }
+
+  handleIngredientChange = event => {
+    event.preventDefault();
+    this.setState({ ingredients: [...this.state.ingredients, event.target.name] })
+  }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -17,7 +25,7 @@ class OrderForm extends Component {
   }
 
   clearInputs = () => {
-    this.setState({name: '', ingredients: []});
+    this.setState({ name: '', ingredients: [] });
   }
 
   render() {
@@ -40,9 +48,9 @@ class OrderForm extends Component {
           onChange={e => this.handleNameChange(e)}
         />
 
-        { ingredientButtons }
+        { ingredientButtons}
 
-        <p>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
+        <p>Order: {this.state.ingredients.join(', ') || 'Nothing selected'}</p>
 
         <button onClick={e => this.handleSubmit(e)}>
           Submit Order
