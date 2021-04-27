@@ -1,29 +1,31 @@
-[
-    {
-        id: 1,
-        name: Jenny,
-        ingredients: [
-            "beans",
-            "pico de gallo",
-            "queso fresco"
-        ]
-    },
-    {
-        id: 2,
-        name: Jill,
-        ingredients: [
-            "carnitas",
-            "sour cream",
-            "jalapenos"
-        ]
-    },
-    {
-        id: 3,
-        name: James,
-        ingredients: [
-            "steak",
-            "lettuce",
-            "queso fresco"
-        ]
-    }
-]
+{
+    "orders": [
+        {
+            "id": 1,
+            "name": "Jenny",
+            "ingredients": [
+                "beans",
+                "pico de gallo",
+                "queso fresco"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Jill",
+            "ingredients": [
+                "carnitas",
+                "sour cream",
+                "jalapenos"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "James",
+            "ingredients": [
+                "steak",
+                "lettuce",
+                "queso fresco"
+            ]
+        }
+    ]
+}

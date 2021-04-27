@@ -6,7 +6,8 @@ class OrderForm extends Component {
     this.props = props;
     this.state = {
       name: '',
-      ingredients: []
+      ingredients: [],
+      error: ''
     };
   }
 
@@ -21,7 +22,8 @@ class OrderForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.submitOrder({ name: this.state.name, ingredients: this.state.ingredients })
+    this.props.name ? this.props.submitOrder({ name: this.state.name, ingredients: this.state.ingredients })
+      : this.setState({ error: 'Please enter a name for the new order' })
     this.clearInputs();
   }
 
@@ -42,6 +44,7 @@ class OrderForm extends Component {
     return (
       <form>
         <input
+          data-cy="name"
           type='text'
           placeholder='Name'
           name='name'
@@ -50,10 +53,10 @@ class OrderForm extends Component {
         />
 
         { ingredientButtons}
-
+        {this.state.error && <p>{this.state.error}</p>}
         <p>Order: {this.state.ingredients.join(', ') || 'Nothing selected'}</p>
 
-        <button onClick={e => this.handleSubmit(e)}>
+        <button data-cy="submit" onClick={e => this.handleSubmit(e)}>
           Submit Order
         </button>
       </form>
