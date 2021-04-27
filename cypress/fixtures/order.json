@@ -1,0 +1,9 @@
+{
+    id: 24, 
+    name: "Jill", 
+    ingredients: [
+        "steak",
+        "queso fresco",
+        "cilantro"
+    ]
+}

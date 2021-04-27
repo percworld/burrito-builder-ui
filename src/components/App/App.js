@@ -18,15 +18,14 @@ class App extends Component {
       .catch(err => console.error('Error fetching:', err));
   }
 
-  submitOrder(order) {
-    console.log(order)
+  submitOrder = (order) => {
     postOrder(order)
-      .then(getOrders())
+      .then(response => this.setState({ orders: [...this.state.orders, response] }))
       .catch(err => console.error('Error fetching:', err));
   }
 
   render() {
-    //console.log(this.state.orders)
+    console.log(this.state.orders)
     return (
       <main className="App">
         <header>

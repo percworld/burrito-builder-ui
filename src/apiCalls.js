@@ -4,7 +4,6 @@ export const getOrders = () => {
 }
 
 export const postOrder = (order) => {
-  console.log(order)
   return fetch('http://localhost:3001/api/v1/orders', {
     method: 'POST',
     body: JSON.stringify(order),
