@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getOrders } from '../../apiCalls';
+import { getOrders, postOrder } from '../../apiCalls';
 import Orders from '../../components/Orders/Orders';
 import OrderForm from '../../components/OrderForm/OrderForm';
 
@@ -19,8 +19,10 @@ class App extends Component {
   }
 
   submitOrder(order) {
-
-
+    console.log(order)
+    postOrder(order)
+      .then(getOrders())
+      .catch(err => console.error('Error fetching:', err));
   }
 
   render() {
