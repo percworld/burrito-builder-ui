@@ -22,8 +22,8 @@ class OrderForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.state.name ? this.props.submitOrder({ name: this.state.name, ingredients: this.state.ingredients })
-      : this.setState({ error: 'Please enter a name for the new order' })
+    this.state.name && this.state.ingredients.length ? this.props.submitOrder({ name: this.state.name, ingredients: this.state.ingredients })
+      : this.setState({ error: 'Please enter a name for the new order and at least one ingredient' })
     this.clearInputs();
   }
 
