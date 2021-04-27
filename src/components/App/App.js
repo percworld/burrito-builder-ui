@@ -14,7 +14,6 @@ class App extends Component {
 
   componentDidMount() {
     getOrders()
-      .then(r => console.log(r))
       .then(response => this.setState({ orders: response.orders }))
       .catch(err => console.error('Error fetching:', err));
   }
@@ -27,7 +26,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.orders)
     return (
       <main className="App">
         <header>
